@@ -8,7 +8,7 @@ public class PrintExample {
 		
 		// System.out.print() : 단순 출력(출력 후 줄바꿈 X)
 		// System.out.println() : 한 줄 출력(출력 후 줄바꿈 수행)
-		// 줄바꿈이라는 차이점은 있찌만 괄호안의 내용이 그대로 출력된다는것은 똑같음
+		// 줄바꿈이라는 차이점은 있지만 괄호안의 내용이 그대로 출력된다는것은 똑같음
 		
 		// System.out.println(); 자동완성 syso ctrl + space
 		System.out.println("테스트1");
@@ -55,6 +55,7 @@ public class PrintExample {
 		// 10 + 10 * 5 / 2 = 35
 		
 		System.out.printf("%d + %d * %d / 2 = %d\n", iNum1, iNum1, iNum2, iNum1 + iNum1 * iNum2 / 2);
+		System.out.println();
 		
 		
 		// 패턴연습
@@ -62,14 +63,17 @@ public class PrintExample {
 		
 		System.out.printf("%d\n", iNum3);	// 3
 		System.out.printf("%5d\n", iNum3);	// 5칸 공간 확보 후 오른쪽 정렬
-		System.out.printf("%-5d\n", iNum3);	// 5칸 공간 확보 후 오른쪽 정렬
+		System.out.printf("%-5d\n", iNum3);	// 5칸 공간 확보 후 왼쪽 정렬
 		
+		System.out.println();
 		
 		
 		// 소수점 자리 제어 (반올림처리)
 		System.out.printf("%f\n", 10 / 4.0);	// 2.500000
 		System.out.printf("%.2f\n" , 10 / 4.0);	// 소수점 둘째자리까지만 나타내고싶다
 		System.out.printf("%.0f\n" , 10 / 4.0);	// 소수점 아래를 표현하지 않겠다
+		
+		System.out.println();
 		
 		// 문자, 문자열 ,boolean
 		boolean isTrue = false;
@@ -81,6 +85,8 @@ public class PrintExample {
 		
 		
 		// escape(이스케이프 == 탈출) 문자 : 일반 문자가 아닌 특수문자 표현
+		
+		System.out.println();
 		
 		//	\
 		System.out.println("\\");

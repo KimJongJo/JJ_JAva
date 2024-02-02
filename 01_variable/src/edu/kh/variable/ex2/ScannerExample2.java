@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class ScannerExample2 {
 	public static void main(String[] args) {
 		
-		// 사칙연상 계산기
+		// 사칙연산 계산기
 		// -> 두 실수를 입력받아 사칙연산 결과를 모두 출력
 		// -> 단, 출력된 결과값은 소수점 이하 2째자리까지만 표현
 		
