@@ -1,4 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
     <fullyQualifiedTypeName name="java.util.Stack"/>
+    <fullyQualifiedTypeName name="javax.print.attribute.SetOfIntegerSyntax"/>
+    <fullyQualifiedTypeName name="edu.kh.variable.ex2.ScannerExample"/>
+    <fullyQualifiedTypeName name="com.kh.variable.practice2.Practice1"/>
+    <fullyQualifiedTypeName name="com.kh.variable.practice2.Practice2"/>
+    <fullyQualifiedTypeName name="com.kh.variable.practice2.Practice3"/>
+    <fullyQualifiedTypeName name="edu.kh.op.ex.OpExample"/>
+    <fullyQualifiedTypeName name="edu.kh.op.practice.OperatorPractice"/>
+    <fullyQualifiedTypeName name="java.lang.System"/>
+    <fullyQualifiedTypeName name="java.util.Scanner"/>
+    <fullyQualifiedTypeName name="edu.kh.op.practice.OeratopPractice2"/>
 </qualifiedTypeNameHistroy>
