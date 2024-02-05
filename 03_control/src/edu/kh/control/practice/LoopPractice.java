@@ -123,7 +123,7 @@ public class LoopPractice {
 	public void practice9(){
 		System.out.print("정수 입력 : ");
 		int input = sc.nextInt();
-		int space = 3;
+		int space = input - 1;
 		int star = 1;
 		
 		for(int i = 0; i < input; i++) {
@@ -164,6 +164,66 @@ public class LoopPractice {
 			System.out.println();
 			
 		}
+	}
+	
+	
+	public void practice11() {
+		System.out.print("정수 입력 : ");
+		int input = sc.nextInt();
+		int space = input - 1;
+		int star = 1;
+		
+		for(int i = 0; i < input; i++) {
+			for(int j = 0; j < space; j++) {
+				System.out.print(" ");
+			}
+			space--;
+			for(int j = 0; j < star; j++) {
+				System.out.print("*");
+			}
+			star += 2;
+			System.out.println();
+		}
+		
+	}
+	
+	public void practice12() {
+		System.out.print("정수 입력 : ");
+		int input = sc.nextInt();
+		int space = input - 2;
+		
+		for(int i = 0; i < input; i++) {
+			if(i == 0 || i == input - 1) {
+				for(int j = 0; j < input; j++) {
+					System.out.print("*");
+				}
+				System.out.println();
+			}else {
+				System.out.print("*");
+				for(int j = 0; j < space; j++) {
+					System.out.print(" ");
+				}
+				System.out.print("*\n");
+			}
+		}
+	}
+	
+	public void practice13() {
+		System.out.print("정수 입력 : ");
+		int input = sc.nextInt();
+		int count = 0;
+		
+		for(int i = 1; i <= input; i++) {
+			if(i % 2 == 0 || i % 3 == 0) {
+				System.out.print(i + " ");
+			}
+			if(i % 2 == 0 && i % 3 == 0) {
+				count++;
+			}
+			
+		}
+		System.out.println();
+		System.out.print("count : " + count);
 	}
 	
 }
