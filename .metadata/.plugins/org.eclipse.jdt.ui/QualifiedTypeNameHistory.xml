@@ -9,6 +9,8 @@
     <fullyQualifiedTypeName name="edu.kh.op.ex.OpExample"/>
     <fullyQualifiedTypeName name="edu.kh.op.practice.OperatorPractice"/>
     <fullyQualifiedTypeName name="java.lang.System"/>
-    <fullyQualifiedTypeName name="java.util.Scanner"/>
     <fullyQualifiedTypeName name="edu.kh.op.practice.OeratopPractice2"/>
+    <fullyQualifiedTypeName name="edu.kh.control.condition.ConditionExample"/>
+    <fullyQualifiedTypeName name="java.lang.Math"/>
+    <fullyQualifiedTypeName name="java.util.Scanner"/>
 </qualifiedTypeNameHistroy>
