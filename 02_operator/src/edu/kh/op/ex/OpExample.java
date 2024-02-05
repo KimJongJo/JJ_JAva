@@ -80,7 +80,7 @@ public class OpExample {
 		// ==> b는 1보다 크거나 같으면서, 10보다 작거나 같다 // 1~10
 		System.out.println((1 <= b) && (b <= 10));	// true
 		
-		System.out.println("-------------------------------");
+//		System.out.println("-------------------------------");
 		
 		// || (OR) : 둘 다 false면 false, 나머지는 true (AND 반대)
 		// 또는, ~거나, ~이거나
@@ -103,7 +103,7 @@ public class OpExample {
 		String result = num > 30 ? "num은 30보다 큰 수이다"  :  "num은 30 이하의 수이다" ;
 		System.out.println(result);
 		
-		System.out.println("-------------------------------");
+//		System.out.println("-------------------------------");
 		
 		// 입력 받은 정수가 음수인지 양수인지 구분
 		// 단, 0은 양수로 처리
