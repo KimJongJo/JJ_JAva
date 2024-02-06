@@ -294,42 +294,52 @@ public class PracticeService {
 	}
 	
 	public void practice14(){
-		
 		System.out.print("배열의 크기를 입력하세요 : ");
-		int arrLength = sc.nextInt();
+		int arrSize = sc.nextInt();
 
-		String[] arr = new String[10];
-		int save = 1;
-
+		String[] strArr = new String[100];
+		int save = 0;
 		
 		while(true) {
 			
 			sc.nextLine();
-			for(int i = 0; i < arrLength; i++) {
+			for(int i = 0; i < arrSize; i++) {
 				
-				System.out.print(save + "번째 문자열 : ");
-				arr[save - 1] = sc.nextLine();
 				save++;
+				System.out.print(save + "번째 문자열 : ");
+				strArr[save - 1] = sc.nextLine();
 			}
 			
-			
-			
-			System.out.print("더 값을 입력하시겠습니까?(Y/N)");
+			System.out.print("더 값을 입력하시겠습니까?(Y/N) : ");
 			String answer = sc.nextLine();
 			
 			if(answer.charAt(0) == 'n' || answer.charAt(0) == 'N') {
 				break;
 			}
-			
-			else {
+
 			System.out.print("더 입력하고 싶은 개수 : ");
-			arrLength = sc.nextInt();
-			}
+			arrSize =  sc.nextInt();
 			
 		}
 		
+		
+		String[] arr = new String[save];
+		
+
+		
+		System.arraycopy(strArr, 0, arr, 0, arr.length);
+		
 		System.out.println(Arrays.toString(arr));
 		
+
+		
+		
+		
+		
+		
+		
+		
 	}
+
 	
 }
