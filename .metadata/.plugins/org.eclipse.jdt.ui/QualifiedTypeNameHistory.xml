@@ -12,5 +12,7 @@
     <fullyQualifiedTypeName name="edu.kh.op.practice.OeratopPractice2"/>
     <fullyQualifiedTypeName name="edu.kh.control.condition.ConditionExample"/>
     <fullyQualifiedTypeName name="java.lang.Math"/>
+    <fullyQualifiedTypeName name="java.lang.ArrayStoreException"/>
+    <fullyQualifiedTypeName name="java.util.Arrays"/>
     <fullyQualifiedTypeName name="java.util.Scanner"/>
 </qualifiedTypeNameHistroy>
