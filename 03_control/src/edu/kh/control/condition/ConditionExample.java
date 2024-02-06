@@ -162,7 +162,7 @@ public class ConditionExample {	//	기능 제공용 클래스
 		if(age <= 13) {
 			answer = "어린이 입니다.";
 		}else if(age > 19) {
-			answer = "성인 입니다..";
+			answer = "성인 입니다.";
 		}else {
 			answer = "청소년 입니다.";
 		}

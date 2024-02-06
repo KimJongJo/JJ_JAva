@@ -20,7 +20,7 @@ public class ArrayRun {
 		ArrayExample2 a2 = new ArrayExample2();
 		
 //		a2.shallowCopy();
-//		a2.deepCopy();
-		a2.createLottoNumber();
+		a2.deepCopy();
+//		a2.createLottoNumber();
 	}
 }
