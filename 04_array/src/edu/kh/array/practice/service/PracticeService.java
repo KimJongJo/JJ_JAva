@@ -294,51 +294,59 @@ public class PracticeService {
 	}
 	
 	public void practice14(){
+		
+		
 		System.out.print("배열의 크기를 입력하세요 : ");
 		int arrSize = sc.nextInt();
-
-		String[] strArr = new String[100];
-		int save = 0;
+		sc.nextLine();
 		
-		while(true) {
+		String[] arr = new String[arrSize];
+		
+		int save = 0;
+		int point = 0;
+		
+		for(int i = 0; i < arr.length; i++) {
 			
-			sc.nextLine();
-			for(int i = 0; i < arrSize; i++) {
-				
-				save++;
-				System.out.print(save + "번째 문자열 : ");
-				strArr[save - 1] = sc.nextLine();
-			}
+			System.out.print(++save + "번째 문자열 : ");
+			arr[i] = sc.nextLine();
 			
-			System.out.print("더 값을 입력하시겠습니까?(Y/N) : ");
-			String answer = sc.nextLine();
-			
-			if(answer.charAt(0) == 'n' || answer.charAt(0) == 'N') {
-				break;
-			}
-
-			System.out.print("더 입력하고 싶은 개수 : ");
-			arrSize =  sc.nextInt();
 			
 		}
 		
+		while(true) {
+			
+			System.out.print("더 값을 입력하시겠습니까?(Y/N) : ");
+			String answer = sc.next();
+
+			
+			if(answer.charAt(0) == 'y' || answer.charAt(0) == 'Y') {
+				
+				
+				System.out.print("더 입력하고 싶은 개수 : ");
+				int plus = sc.nextInt();
+				sc.nextLine();
+				
+				arrSize += plus;
+				point = arrSize - plus;
+				
+				arr = Arrays.copyOf(arr, arrSize);
+
+				
+				for(int i = point; i < arrSize; i++) {
+					System.out.print(++save + "번째 문자열 : ");
+					arr[i] = sc.nextLine();
+				}
+				
+				continue;
+			}
+			
+			
+			System.out.println(Arrays.toString(arr));
+			break;
+		}
 		
-		String[] arr = new String[save];
 		
 
-		
-		System.arraycopy(strArr, 0, arr, 0, arr.length);
-		
-		System.out.println(Arrays.toString(arr));
-		
-
-		
-		
-		
-		
-		
-		
-		
 	}
 
 	
