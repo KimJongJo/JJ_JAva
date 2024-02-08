@@ -75,6 +75,7 @@ public class ClsService /*extends Student*/ {
 	
 	}
 
+	
 	public void ex3() {
 	
 		//생성자 확인 테스트
@@ -82,7 +83,69 @@ public class ClsService /*extends Student*/ {
 		//User 기본 생성자를 이용해서 객체 생성		
 		User user = new User();
 		
+		System.out.println(user.getUserId());
+		System.out.println(user.getUserPw());
+		System.out.println(user.getUserName());
+		System.out.println(user.getUserAge());
+		System.out.println(user.getUserGender());
+		
+		
+		User u2 = new User();
+		
+		System.out.println(u2.getUserId());
+		System.out.println(u2.getUserPw());
+		System.out.println(u2.getUserName());
+		System.out.println(u2.getUserAge());
+		System.out.println(u2.getUserGender());
+		
+		// 문제점 : user가 참조하고있는 User 객체와
+		//		 	u2가 참조하고있는 User 객체의 필드값이 모두 동일함
+		//          같은 기본 생성자로 User 객체를 생성했기 때문
+		
+		
+		// 해결방법 1 : setter를 이용해서 새로운 값 대입
+		
+		u2.setUserId("asd12345");
+		u2.setUserPw("1w2e3r");
+		u2.setUserName("김영희");
+		u2.setUserAge(19);
+		u2.setUserGender('여');
+		
+		System.out.println(u2.getUserId());
+		System.out.println(u2.getUserPw());
+		System.out.println(u2.getUserName());
+		System.out.println(u2.getUserAge());
+		System.out.println(u2.getUserGender());
+		
+		
+		
+		// 해결 방법 2: 매개변수 생성자를 이용해서 
+		//				객체가 생성될 때 부터 다른값으로 필드를 초기화
+		
+		User u3 = new User("test3","password333");	// 매개변수 생성자
+		// 생성자 수행 시 전달갈 값을 작성
+		
+		System.out.println(u3.getUserId());
+		System.out.println(u3.getUserPw());
+
+		
+		
 	}
 	
 	
+	public void ex4() {
+		
+		// 매개변수 생성자 예제
+		
+		User u1 = new User();	// 기본생성자
+		User u2 = new User("user02","pass02"); // 매개변수 2개 생성자
+		User u3 = new User("user03","pass03","김길동",30,'남'); // 매개변수 5개 생성자(전부초기화)
+		
+		System.out.printf("u1 : %s / %s / %s / %d / %c\n",
+					u1.getUserId(), u1.getUserPw(), u1.getUserName(), u1.getUserAge(), u1.getUserGender());
+		System.out.printf("u2 : %s / %s / %s / %d / %c\n",
+				u2.getUserId(), u2.getUserPw(), u2.getUserName(), u2.getUserAge(), u2.getUserGender());
+		System.out.printf("u3 : %s / %s / %s / %d / %c\n",
+				u3.getUserId(), u3.getUserPw(), u3.getUserName(), u3.getUserAge(), u3.getUserGender());
+	}
 }
