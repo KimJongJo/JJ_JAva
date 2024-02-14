@@ -23,8 +23,9 @@ public class Member {
 	}
 	
 	public String information() {
-		
-		return "";
+		String s = "사용자 아이디 : "+userId+" - 이름 : "+name+
+				" - 나이 : "+age+" - 성별 : "+gender+" - 이메일 : "+ email + "\n";
+		return s;
 	}
 
 	

@@ -13,9 +13,7 @@
     <fullyQualifiedTypeName name="edu.kh.control.condition.ConditionExample"/>
     <fullyQualifiedTypeName name="java.lang.Math"/>
     <fullyQualifiedTypeName name="java.lang.ArrayStoreException"/>
-    <fullyQualifiedTypeName name="java.nio.file.spi.FileSystemProvider"/>
     <fullyQualifiedTypeName name="java.util.ArrayList"/>
-    <fullyQualifiedTypeName name="java.util.Arrays"/>
     <fullyQualifiedTypeName name="edu.kh.oop.abstraction.model.vo.People"/>
     <fullyQualifiedTypeName name="edu.kh.oop.abstraction.run.AbstractionRun"/>
     <fullyQualifiedTypeName name="edu.kh.oop.abstraction.model.service.AbstractionService"/>
@@ -43,4 +41,7 @@
     <fullyQualifiedTypeName name="com.hw4.controller.MemberController"/>
     <fullyQualifiedTypeName name="com.hw4.model.vo.Member"/>
     <fullyQualifiedTypeName name="com.hw4.view.MemberMenu"/>
+    <fullyQualifiedTypeName name="java.nio.file.spi.FileSystemProvider"/>
+    <fullyQualifiedTypeName name="java.util.Arrays"/>
+    <fullyQualifiedTypeName name="java.util.Comparator"/>
 </qualifiedTypeNameHistroy>
