@@ -5,10 +5,19 @@ import java.util.Comparator;
 
 import com.hw4.model.vo.Member;
 
-public class MemberController {
+public class MemberController{
 	public static int SIZE = 10;
-	private int memberCount = 0;
-	private Member[] mem = new Member[10];
+	private int memberCount;
+	private Member[] mem = new Member[SIZE];
+	
+	{
+		mem[0] = new Member("user01", "pass01","김유신",20, 'M', "kim12@naver.com");
+		mem[1] = new Member("user02", "pass02","이순신",60, 'M', "lee2@naver.com");
+		mem[2] = new Member("user03", "pass03","유관순",17, 'F', "yo5@hanmail.net");
+		mem[3] = new Member("user04", "pass04","연개소문",57, 'M', "yeon@gmail.com");
+		mem[4] = new Member("user05", "pass05","신사임당",45, 'F', "shin@naver.com");
+		memberCount = 5;
+	}
 	
 	
 	// 현재 회원수를 나타내는 memberCount 변수값을 반환해주는 메소드
@@ -149,7 +158,10 @@ public class MemberController {
 	// 객체배열을 아이디별 오름차순 정렬한 후 주소값 반환
 	public Member[] sortIdAsc() {
 		
-		Member[] copy = Arrays.copyOf(mem, memberCount);
+		Member[] copy = new Member[memberCount];
+		
+		System.arraycopy(mem, 0, copy, 0, memberCount);
+		
 		
 		Arrays.sort(copy, new Comparator<Member>() {
 			
@@ -167,7 +179,9 @@ public class MemberController {
 	// 객체배열을 아이디별 내림차순 정렬한 후 주소값 반환
 	public Member[] sortIdDesc() {
 		
-		Member[] copy = Arrays.copyOf(mem, memberCount);
+		Member[] copy = new Member[memberCount];
+		
+		System.arraycopy(mem, 0, copy, 0, memberCount);
 		
 		Arrays.sort(copy, new Comparator<Member>() {
 			
@@ -185,7 +199,9 @@ public class MemberController {
 	//객체배열을 나이별 오름차순 정렬한 후 주소값 반환
 	public Member[] sortAgeAsc() {
 		
-		Member[] copy = Arrays.copyOf(mem, memberCount);
+		Member[] copy = new Member[memberCount];
+		
+		System.arraycopy(mem, 0, copy, 0, memberCount);
 		
 		Arrays.sort(copy, new Comparator<Member>() {
 			
@@ -204,7 +220,9 @@ public class MemberController {
 	// 객체배열을 나이별 내림차순 정렬한 후 주소값 반환
 	public Member[] sortAgeDesc() {
 		
-		Member[] copy = Arrays.copyOf(mem, memberCount);
+		Member[] copy = new Member[memberCount];
+		
+		System.arraycopy(mem, 0, copy, 0, memberCount);
 		
 		Arrays.sort(copy, new Comparator<Member>() {
 			
@@ -222,7 +240,9 @@ public class MemberController {
 	// 객체배열을 성별로 내림차순 정렬(남여순)한 후 주소값 반환
 	public Member[] sortGenderDesc() {
 		
-		Member[] copy = Arrays.copyOf(mem, memberCount);
+		Member[] copy = new Member[memberCount];
+		
+		System.arraycopy(mem, 0, copy, 0, memberCount);
 		
 		Arrays.sort(copy, new Comparator<Member>() {
 			
@@ -235,4 +255,7 @@ public class MemberController {
 		return copy;
 		
 	}
+
+
+	
 }

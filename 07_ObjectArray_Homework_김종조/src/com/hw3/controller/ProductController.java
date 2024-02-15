@@ -160,13 +160,7 @@ public class ProductController {
 						(int)(pro[i].getPrice() + pro[i].getPrice() * pro[i].getTax()));
 			}
 		}
-		
 
-		
-
-		
-
-		
 	}
 	
 
