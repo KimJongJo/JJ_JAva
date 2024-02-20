@@ -35,7 +35,7 @@ public class Person {
 	/*
 	@Override
 	public int hashCode() {
-		// 필드에 저장된 값을 이용해서 hashcode 생성
+		// 필드에 저장된 값을 이용해서 hashCode 생성
 		
 		// Objects : Object 관련된 유용한 기능 모음
 		return Objects.hash(name, age, gender);
