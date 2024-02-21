@@ -82,7 +82,21 @@ public class Toy {
 	@Override
 	public String toString() {
 		return "이름 : " + name + " / 가격 : " + price + " / 색상 : " + color + " / 사용가능연령 : " + userAge
-				 + " / 제조년월일 : " + madeDate + " / 재료 : " + set;
+				 + " / 제조년월일 : " + madeDate + " / 재료 : " + setToString();
+	}
+	
+	public String setToString() {
+		StringBuilder sb = new StringBuilder();
+		
+		for(String item : set) {
+			sb.append(item).append(", ");
+		}
+		sb.deleteCharAt(sb.length() - 1);
+		sb.deleteCharAt(sb.length() - 1);
+		
+		
+		String s = sb.toString();
+		return s;
 	}
 
 

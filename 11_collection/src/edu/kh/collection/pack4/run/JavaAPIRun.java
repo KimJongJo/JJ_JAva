@@ -7,6 +7,6 @@ public class JavaAPIRun {
 		
 		JavaAPIService service = new JavaAPIService();
 		
-		service.method6();
+		service.method5();
 	}
 }

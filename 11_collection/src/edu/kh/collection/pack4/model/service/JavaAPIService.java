@@ -176,14 +176,14 @@ public class JavaAPIService {
 		String temp1 = "Hello!!"; // 0x400
 		String temp2 = "Hello!!"; 
 		
-		System.out.println(System.identityHashCode(temp1));
-		System.out.println(System.identityHashCode(temp2));
+		System.out.println(System.identityHashCode(temp1)); // 1865127310
+		System.out.println(System.identityHashCode(temp2)); // 1865127310
 		
 		// 객체의 필드 값을 비교
-		System.out.println("저장된 값 비교 : " + temp1.equals(temp2));
+		System.out.println("저장된 값 비교 : " + temp1.equals(temp2)); // true
 		
 		// 변수에 저장된 값(주소) 비교
-		System.out.println("주소를 비교 : " + (temp1 == temp2));
+		System.out.println("주소를 비교 : " + (temp1 == temp2)); // true
 		
 	}
 	
@@ -201,15 +201,16 @@ public class JavaAPIService {
 		String temp2 = new String("abcd"); // new 연산자로 생성
 		String temp3 = new String("abcd"); // new 연산자로 생성
 		
-		System.out.println("temp1 : " + System.identityHashCode(temp1));
-		System.out.println("temp2 : " + System.identityHashCode(temp2));
-		System.out.println("temp3 : " + System.identityHashCode(temp3));
+		System.out.println("temp1 : " + System.identityHashCode(temp1)); // 1865127310
+		System.out.println("temp2 : " + System.identityHashCode(temp2)); // 1744347043
+		System.out.println("temp3 : " + System.identityHashCode(temp3)); // 1254526270
 		
 		// 셋 다 주소가 다름 == "abcd" 를 재활용하지 않음
 		// -> 값은 같지만 전부 다른 객체
 		
 		temp2 += "efg";
-		System.out.println("efg temp2 : " + System.identityHashCode(temp2));
+		System.out.println("efg temp2 : " + System.identityHashCode(temp2)); // 1618212626
+
 		// 기존 temp2 해시코드와 다르다 --> 다른 객체
 		
 	}
