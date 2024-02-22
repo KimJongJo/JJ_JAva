@@ -8,6 +8,6 @@ public class Run {
 		
 		ToyFactory tf = new ToyFactory();
 		
-		tf.test();
+		tf.displayMenu();
 	}
 }

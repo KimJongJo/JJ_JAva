@@ -60,44 +60,49 @@ public class ToyFactory {
 		
 		int inputNum = 0;
 		
-		try {
-			do {
-				System.out.println("<<플레이타임 공장>>");
-				System.out.println("1. 전체 장난감 조회하기");
-				System.out.println("2. 새로운 장난감 만들기");
-				System.out.println("3. 장난감 삭제하기");
-				System.out.println("4. 장난감 제조일 순으로 조회하기");
-				System.out.println("5. 연령별 사용 가능한 장난감 리스트 조회하기");
-				System.out.println("6. 재료 추가");
-				System.out.println("7. 재료 제거");
-				System.out.println("0. 종료");
-				System.out.print("선택 : ");
-				inputNum = sc.nextInt();
-				sc.nextLine();
+		
+		
+				do {
+					System.out.println("<<플레이타임 공장>>");
+					System.out.println("1. 전체 장난감 조회하기");
+					System.out.println("2. 새로운 장난감 만들기");
+					System.out.println("3. 장난감 삭제하기");
+					System.out.println("4. 장난감 제조일 순으로 조회하기");
+					System.out.println("5. 연령별 사용 가능한 장난감 리스트 조회하기");
+					System.out.println("6. 재료 추가");
+					System.out.println("7. 재료 제거");
+					System.out.println("0. 종료");
+					System.out.print("선택 : ");
+					
+					
+				try {
+					
+					inputNum = sc.nextInt();
+					sc.nextLine();
+					
+					switch(inputNum) {
+					case 1 : showAllToys(); break;
+					case 2 : makeToy(); break;
+					case 3 : removeToy(); break;
+					case 4 : sortByMade(); break;
+					case 5 : sortByAge(); break;
+					case 6 : addIngredient(); break;
+					case 7 : removeIngredient(); break;
+					case 0 : System.out.println("프로그램 종료..."); break;
+					default : System.out.println("잘못 입력하셨습니다.");
+					}
 				
-				switch(inputNum) {
-				case 1 : showAllToys(); break;
-				case 2 : makeToy(); break;
-				case 3 : removeToy(); break;
-				case 4 : sortByMade(); break;
-				case 5 : sortByAge(); break;
-				case 6 : addIngredient(); break;
-				case 7 : removeIngredient(); break;
-				case 0 : System.out.println("프로그램 종료..."); break;
-				default : System.out.println("잘못 입력하셨습니다.");
+				}catch(Exception e) {
+					System.out.println("입력 오류...");
+					sc.nextLine();
+					
+					inputNum = -1;
 				}
-				
-				
+					
 			}while(inputNum != 0);
-		}catch(InputMismatchException e) {
-			System.out.println("입력 오류...");
-			displayMenu();
+			
 		}
-		
-		
-		
-	}
-	
+
 	/**
 	 * 전체 장난감 조회
 	 */
@@ -113,7 +118,7 @@ public class ToyFactory {
 	/**
 	 * 새로운 장난감 만들기
 	 */
-	public void makeToy() throws InputMismatchException{
+	public void makeToy() {
 		
 		Set<String> set = new HashSet<String>();
 		
@@ -167,7 +172,7 @@ public class ToyFactory {
 	/**
 	 * 장난감 삭제
 	 */
-	public void removeToy() throws InputMismatchException{
+	public void removeToy() throws Exception{
 		System.out.print("삭제할 장난감의 이름을 입력하세요 : ");
 		String input = sc.nextLine();
 		boolean flag = true;
@@ -242,7 +247,7 @@ public class ToyFactory {
 	/**
 	 * 재료 추가
 	 */
-	public void addIngredient() throws InputMismatchException{
+	public void addIngredient() throws Exception{
 		
 		System.out.println("=== 현재 등록된 재료 ===");
 		for(int i = 0; i < basic.size(); i++) {
@@ -279,7 +284,7 @@ public class ToyFactory {
 	/**
 	 * 재료 삭제
 	 */
-	public void removeIngredient() throws InputMismatchException{
+	public void removeIngredient() throws Exception{
 		
 		System.out.println("=== 현재 등록된 재료 ===");
 		for(int i = 0; i < basic.size(); i++) {
