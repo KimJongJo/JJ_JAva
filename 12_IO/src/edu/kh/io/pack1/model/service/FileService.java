@@ -117,7 +117,7 @@ public class FileService {
 				}
 				
 			}
-			
+			//새로운 파일을 만들거나, 디렉토리를 만들때 IOException이 발생한다.
 		}catch(IOException e) {
 			e.printStackTrace(); // 예외 정보 + 예외가 발생한 위치까지의 메서드 추적
 		}
@@ -132,8 +132,10 @@ public class FileService {
 	 */
 	public void method3() {
 		
+		//C:\home_study\JJ_JAva\12_IO
+		
 		// File객체 생성
-		File directory = new File("\\workspace\\02_Java\\12_IO");
+		File directory = new File("\\home_study\\JJ_Java\\12_IO");
 		
 		// 지정된 디렉토리에 있는 모든 파일/디렉토리를 File[] 형태로 얻어오기
 		File[] files = directory.listFiles();

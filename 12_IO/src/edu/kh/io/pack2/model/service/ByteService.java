@@ -61,8 +61,8 @@ public class ByteService {
 			sb.append("1234567890\n");
 			sb.append("~!@#$%^&*()_+<>?\n");
 			sb.append("가나다라마바사아\n");
-			sb.append("동해물과 백두산이 마르고 닳도록");
-			sb.append("하느님이 보우하사 우리나라 만세");
+			sb.append("동해물과 백두산이 마르고 닳도록 ");
+			sb.append("하느님이 보우하사 우리나라 만세 ");
 			sb.append("애국가");
 			
 			// StringBuilder -> String 변환
@@ -89,6 +89,7 @@ public class ByteService {
 			
 			// 출력방법 2 : String을 byte[] 변환 후 출력
 			fos.write(content.getBytes());
+
 			
 			long endTime = System.nanoTime();
 			
