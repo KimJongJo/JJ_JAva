@@ -39,7 +39,7 @@ public class BoardView {
 			
 			try {
 				
-				System.out.println("=========== 나만의 게시판 ===========");
+				System.out.println("\n=========== 나만의 게시판 ===========");
 				System.out.println("1. 전체 게시글 보기");
 				System.out.println("2. 게시글 작성하기");
 				System.out.println("3. 인기순으로 보기");
