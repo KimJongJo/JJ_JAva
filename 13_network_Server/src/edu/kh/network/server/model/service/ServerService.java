@@ -42,117 +42,195 @@ public class ServerService {
 	
 	public void serverStart() {
 		
-		// 1) 서버의 포트번호 정함
-		int port = 8500;
-		// 포트는 0 ~ 65535 사이를 지정 가능.
-		// (단, 1023번 이하는 이미 사용중인 경우가 많으니 피하는게 좋음)
+//		// 1) 서버의 포트번호 정함
+//		int port = 8500;
+//		// 포트는 0 ~ 65535 사이를 지정 가능.
+//		// (단, 1023번 이하는 이미 사용중인 경우가 많으니 피하는게 좋음)
+//		
+//		// 소켓용 참조변수 선언
+//		ServerSocket serverSocket = null;
+//		Socket clientSocket = null;
+//		
+//		// 입/출력용 참조변수 선언
+//		InputStream is = null;
+//		OutputStream os = null;
+//		
+//		// 보조스트림 참조변수선언
+//		BufferedReader br = null;
+//		
+//		PrintWriter pw = null;
+//		// PrintWirter : 텍스트 기반 출력 클래스
+//		// 파일, 콘솔, 네트워크 소켓 등 다양한 출력 스트림에
+//		// 데이터를 쉽게 출력 가능
+//		
+//		
+//		
+//		 try {
+//			// 2) 서버용 소켓 객체 생성
+//			serverSocket = new ServerSocket(port);
+//			 
+//			// 3) 클라이언트 쪽에서 접속 요청이 오길 기다림
+//			// 4) 접속 요청이 오면 오쳥 수락 후 해당 클라이언트에 대한 소켓 객체 생성
+//			System.out.println("[Server]");
+//			System.out.println("클라이언트의 요청을 기다리고 있습니다...");
+//			
+//			clientSocket = serverSocket.accept(); // accept : 수락하다
+//			// -> 클라이언트의 요청이 오고 수락이 될 때까지 무한 대기
+//			
+//			System.out.println("[클라이언트 접속 성공]");
+//			
+//			// 5) 연결된 클라이언트와 입출력 스트림 생성
+//			// -> 클라이언트가 서버 요청 시 소켓을 전달함
+//			// -> 소켓에 입/출력 스트림이 담겨있음
+//			is = clientSocket.getInputStream();
+//			os = clientSocket.getOutputStream();
+//			
+//		
+//			// 6) 보조 스트림을 통해 성능 개선
+//			br = new BufferedReader(new InputStreamReader(is));
+//			// 문자 기반 BufferedReader 와
+//			// 바이트 기반 InputStream을 연결할 수 있도록
+//			// InputStreamReader를 함께 사용
+//			
+//			pw = new PrintWriter(os);
+//			
+//			
+//			// 7) 스트림을 통해 읽고 쓰기
+//			// 서버 -> 클라이언트 메세지 전송
+//			
+//			// 2024년 02월 27일 10:31:21 [서버 접속 성공]
+//			Date now = new Date(); // java.util.Date : 자바에서 시간을 나타내는 객체
+//					// new Date() 로 객체 생성 시 현재 시간이 저장되어 있다.
+//			
+//			// SimpleDateFormat : 날짜 형식을 간단히 지정하는 객체
+//			SimpleDateFormat sdf = new SimpleDateFormat("yyyy년 MM월 dd일 HH:mm:ss");
+//			
+//			String str = sdf.format(now) + "[서버 접속 성공]";
+//			
+//			pw.println(str); // 서버 -> 클라이언트로 출력
+//			pw.flush(); // flush : 스트림의 내용을 밀어냄
+//			
+//			
+//			// -------------------------------------------------------
+//			// 클라이언트 -> 서버 메세지 전달 받기
+//			
+//			String clientMessage = br.readLine();
+//			
+//			String clientIp = clientSocket.getInetAddress().getHostAddress();
+//								// 클라이언트 IP
+//			
+//			// 클라이언트 메세지 출력
+//			System.out.println(clientIp + "가 보낸 메시지 : " + clientMessage);
+//			
+//			// -------------------------------------------------------
+//			// 서버 -> 클라이언트 메세지 전달하기
+//			
+//			
+//			Scanner sc = new Scanner(System.in);
+//			
+//			System.out.print("클라이언트로 전달할 메세지 : ");
+//			String str2 = sc.nextLine();
+//			
+//			pw.println(str2); // 메세지를 서버쪽으로 출력
+//			pw.flush();	// 스트림 내용 밀어내기
+//			
+//			// -------------------------------------------------------
+//			
+//			
+//
+//			
+//			
+//		 }catch(Exception e) {
+//			 e.printStackTrace(); // 예외 추적
+//			 
+//		 }finally {
+//			 
+//			 // 8) 통신 종료
+//			 try {
+//				 // 스트림/소켓 닫기
+//				 
+//				 if(br != null) br.close(); // + is.close()
+//				 if(pw != null) pw.close(); // + os.close()
+//				 // 보조 스트림을 닫게 되면
+//				 // 연결된 기반 스트림도 같이 닫게 된다!
+//				 
+//				 if(serverSocket != null) serverSocket.close();
+//				 if(clientSocket != null) clientSocket.close();
+//				 
+//			 }catch(Exception e) {
+//				 e.printStackTrace();
+//			 }
+//			 
+//			 
+//		 }
 		
-		// 소켓용 참조변수 선언
+		// 포트 번호
+		int port = 8500;
+		
+		// 소켓용, 입/출력용, 보조스트림 참조변수 생성
 		ServerSocket serverSocket = null;
 		Socket clientSocket = null;
 		
-		// 입/출력용 참조변수 선언
 		InputStream is = null;
 		OutputStream os = null;
 		
-		// 보조스트림 참조변수선언
 		BufferedReader br = null;
-		
 		PrintWriter pw = null;
-		// PrintWirter : 텍스트 기반 출력 클래스
-		// 파일, 콘솔, 네트워크 소켓 등 다양한 출력 스트림에
-		// 데이터를 쉽게 출력 가능
 		
 		
-		
-		 try {
-			// 2) 서버용 소켓 객체 생성
+		try {
+			// 서버용 소켓 객체
 			serverSocket = new ServerSocket(port);
-			 
-			// 3) 클라이언트 쪽에서 접속 요청이 오길 기다림
-			// 4) 접속 요청이 오면 오쳥 수락 후 해당 클라이언트에 대한 소켓 객체 생성
-			System.out.println("[Server]");
-			System.out.println("클라이언트의 요청을 기다리고 있습니다...");
 			
-			clientSocket = serverSocket.accept(); // accept : 수락하다
-			// -> 클라이언트의 요청이 오고 수락이 될 때까지 무한 대기
+			System.out.println("이곳은 Server입니다");
+			System.out.println("클라이언트 요청 대기중...");
 			
-			System.out.println("[클라이언트 접속 성공]");
 			
-			// 5) 연결된 클라이언트와 입출력 스트림 생성
-			// -> 클라이언트가 서버 요청 시 소켓을 전달함
-			// -> 소켓에 입/출력 스트림이 담겨있음
+			// 클라이언트 쪽에서 접속 요청을 기다림, 접속 요청이 오면 수락 후 해당 클라이언트에 소켓 객체 생성
+			clientSocket = serverSocket.accept();
+			
+			System.out.println("클라이언트 접속 성공!");
+			
+			
+			// 연결된 클라이언트와 입출력 스트림 생성
 			is = clientSocket.getInputStream();
 			os = clientSocket.getOutputStream();
 			
-		
-			// 6) 보조 스트림을 통해 성능 개선
-			br = new BufferedReader(new InputStreamReader(is));
-			// 문자 기반 BufferedReader 와
-			// 바이트 기반 InputStream을 연결할 수 있도록
-			// InputStreamReader를 함께 사용
 			
+			// 보조 스트림을 이용해 성능 개선
+			br = new BufferedReader(new InputStreamReader(is));
 			pw = new PrintWriter(os);
 			
 			
-			// 7) 스트림을 통해 읽고 쓰기
-			// 서버 -> 클라이언트 메세지 전송
+			// 스트림을 통해 읽고 쓰기
+			String str = "서버 접속 성공!!";
 			
-			// 2024년 02월 27일 10:31:21 [서버 접속 성공]
-			Date now = new Date(); // java.util.Date : 자바에서 시간을 나타내는 객체
-					// new Date() 로 객체 생성 시 현재 시간이 저장되어 있다.
+			pw.println(str);
+			pw.flush();
 			
-			// SimpleDateFormat : 날짜 형식을 간단히 지정하는 객체
-			SimpleDateFormat sdf = new SimpleDateFormat("yyyy년 MM월 dd일 HH:mm:ss");
-			
-			String str = sdf.format(now) + "[서버 접속 성공]";
-			
-			pw.println(str); // 서버 -> 클라이언트로 출력
-			pw.flush(); // flush : 스트림의 내용을 밀어냄
-			
-			
-			// -------------------------------------------------------
-			// 클라이언트 -> 서버 메세지 전달 받기
 			
 			String clientMessage = br.readLine();
+			System.out.println("클라이언트에서 보낸 메시지 : " + clientMessage);
 			
-			String clientIp = clientSocket.getInetAddress().getHostAddress();
-								// 클라이언트 IP
-			
-			// 클라이언트 메세지 출력
-			System.out.println(clientIp + "가 보낸 메시지 : " + clientMessage);
-			
-			// -------------------------------------------------------
-			// 서버 -> 클라이언트 메세지 전달하기
-			
-			
+
 			Scanner sc = new Scanner(System.in);
 			
 			System.out.print("클라이언트로 전달할 메세지 : ");
 			String str2 = sc.nextLine();
 			
-			pw.println(str2); // 메세지를 서버쪽으로 출력
-			pw.flush();	// 스트림 내용 밀어내기
+			pw.println(str2);
+			pw.flush();
 			
-			// -------------------------------------------------------
+		}catch(Exception e) {
+			e.printStackTrace();
+		}finally {
+			// 통신 종료
 			
-			
-
-			
-			
-		 }catch(Exception e) {
-			 e.printStackTrace(); // 예외 추적
-			 
-		 }finally {
-			 
-			 // 8) 통신 종료
 			 try {
-				 // 스트림/소켓 닫기
-				 
-				 if(br != null) br.close(); // + is.close()
-				 if(pw != null) pw.close(); // + os.close()
-				 // 보조 스트림을 닫게 되면
-				 // 연결된 기반 스트림도 같이 닫게 된다!
+
+				 if(br != null) br.close();
+				 if(pw != null) pw.close();
+
 				 
 				 if(serverSocket != null) serverSocket.close();
 				 if(clientSocket != null) clientSocket.close();
@@ -161,8 +239,10 @@ public class ServerService {
 				 e.printStackTrace();
 			 }
 			 
-			 
-		 }
+		}
+		
+		
+		
 		
 
 	}
