@@ -61,7 +61,8 @@ public class BoardServiceImpl implements BoardService{
 		dao.boardUpdate(title,updateTitle, content);
 		
 	}
-
+	
+// 목록에 제목이 있는지 확인
 	@Override
 	public Board titleCheck(String title) {
 		
@@ -70,6 +71,7 @@ public class BoardServiceImpl implements BoardService{
 		return titleCheck;
 	}
 
+// 게시글 삭제
 	@Override
 	public boolean boardDelete(String title) throws Exception{
 		
@@ -78,6 +80,7 @@ public class BoardServiceImpl implements BoardService{
 		return delete;
 	}
 
+// 게시물 작성
 	@Override
 	public void addBoard(String title, String writer, String content)  throws Exception {
 		

@@ -11,7 +11,12 @@ public class Board implements Serializable{
 	private int up;			// 추천
 	private int down;		// 비추천
 	private LocalDateTime regDate; // 등록 일
+	
+	// 직렬화한 클래스와 같은 클래스임을 알려주는 식별자
+	// 없으면 InvalidClassException 발생..
 	private static final long serialVersionUID = -8576247315535285275L;
+	
+	
 	
 	// 기본생성자
 	public Board() {}

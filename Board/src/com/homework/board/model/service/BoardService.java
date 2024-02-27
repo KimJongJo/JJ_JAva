@@ -40,10 +40,28 @@ public interface BoardService {
 	 */
 	void boardUpdate(String title, String updateTitle, String content) throws Exception;
 
+	/**
+	 * 목록에 입력한 제목이 있는지 확인
+	 * @param title
+	 * @return
+	 */
 	Board titleCheck(String title);
 
+	/** 
+	 * 게시물 삭제
+	 * @param title
+	 * @return
+	 * @throws Exception
+	 */
 	boolean boardDelete(String title) throws Exception;
 
+	/**
+	 * 게시물 추가
+	 * @param title
+	 * @param writer
+	 * @param content
+	 * @throws Exception
+	 */
 	void addBoard(String title, String writer, String content) throws Exception;
 
 }

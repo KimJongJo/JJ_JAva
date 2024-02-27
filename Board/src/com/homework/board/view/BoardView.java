@@ -39,17 +39,18 @@ public class BoardView {
 			
 			try {
 				
-				System.out.println("\n=========== 나만의 게시판 ===========");
-				System.out.println("1. 전체 게시글 보기");
-				System.out.println("2. 게시글 작성하기");
-				System.out.println("3. 인기순으로 보기");
-				System.out.println("4. 최신순으로 보기");
-				System.out.println("5. 게시글 상세히 보기");
-				System.out.println("6. 게시글 추천하기");
-				System.out.println("7. 게시글 비추천하기");
-				System.out.println("8. 게시글 수정하기");
-				System.out.println("9. 게시글 삭제하기");
-				System.out.println("0. 게시판 나가기");
+				System.out.println("\n\n\n\n ============= 나만의 게시판 =============\n");
+				System.out.printf("            1. 전체 게시글 보기\n");
+				System.out.printf("\n            2. 게시글 작성하기\n");
+				System.out.printf("\n            3. 인기순으로 보기\n");
+				System.out.printf("\n            4. 최신순으로 보기\n");
+				System.out.printf("\n            5. 게시글 상세히 보기\n");
+				System.out.printf("\n            6. 게시글 추천하기\n");
+				System.out.printf("\n            7. 게시글 비추천하기\n");
+				System.out.printf("\n            8. 게시글 수정하기\n");
+				System.out.printf("\n            9. 게시글 삭제하기\n");
+				System.out.printf("\n            0. 게시판 나가기\n");
+				System.out.println("\n =========================================\n");
 				System.out.print("메뉴 입력 >>> ");
 				input = Integer.parseInt(br.readLine());
 				
@@ -63,7 +64,7 @@ public class BoardView {
 				case 7 : boardDown(); break;
 				case 8 : boardUpdate(); break;
 				case 9 : boardDelet(); break;
-				case 0 : System.out.println("게시판을 나갑니다.."); break;
+				case 0 : System.out.println("게시판을 나갑니다..\n\n\n\n ============= 프로그램 종료 ============="); break;
 				default : System.out.println("잘못 입력하셨습니다.");
 				}
 				
@@ -80,23 +81,24 @@ public class BoardView {
 	 */
 	public void boardView() {
 		
-		System.out.println("\n============================ 전체 게시글 ============================\n");
+		System.out.println("\n\n\n\n============================ 전체 게시글 ============================\n");
 		
 		List<Board> boardList = service.boardView();  
 		
 		int count = 1;
 		
 		for(Board board : boardList) {
-			System.out.printf(count++ + ". %-20s - [ %s ]         조회수 : %d / 추천 : %d / 비추천 : %d\n",board.getTitle(), board.getWirter(), board.getVisite(), board.getUp(), board.getDown());
+			System.out.printf("\n" + count++ + ". %-20s - [ %s ]         조회수 : %d / 추천 : %d / 비추천 : %d\n",board.getTitle(), board.getWirter(), board.getVisite(), board.getUp(), board.getDown());
 
 		}
 		
+		System.out.println("\n\n=====================================================================");
 		
 	}
 	
 	
 	public void addBoard() throws Exception {
-		System.out.println("\n============================ 게시글 작성하기 ============================\n");
+		System.out.println("\n\n\n\n============================ 게시글 작성 ============================\n");
 		
 		System.out.print("제목 : ");
 		String title = br.readLine();
@@ -121,7 +123,7 @@ public class BoardView {
 		service.addBoard(title, writer, sb.toString());
 		
 		
-		System.out.println("====================== 게시글을 작성했습니다!!!! ======================");
+		System.out.println("\n====================== 게시글을 작성했습니다!!!! ======================");
 		
 		
 	}
@@ -132,7 +134,7 @@ public class BoardView {
 	 */
 	public void sortByBest() {
 		
-		System.out.println("\n============================ 인기 게시글 ============================\n");
+		System.out.println("\n\n\n\n============================ 인기 게시글 ============================\n");
 		
 		List<Board> boardList = service.boardView();
 		
@@ -145,8 +147,10 @@ public class BoardView {
 		int count = 1;
 		
 		for(Board board : copyList) {
-			System.out.printf(count++ + ". %-20s 조회수 : %d / 추천 : %d / 비추천 : %d\n",board.getTitle(), board.getVisite(), board.getUp(), board.getDown());
+			System.out.printf("\n" + count++ + ". %-20s - [ %s ]         조회수 : %d / 추천 : %d / 비추천 : %d\n",board.getTitle(), board.getWirter(), board.getVisite(), board.getUp(), board.getDown());
 		}
+		
+		System.out.println("\n\n=====================================================================");
 		
 	}
 	
@@ -155,7 +159,7 @@ public class BoardView {
 	 */
 	public void sortByTime() {
 		
-		System.out.println("\n============================ 최신 게시글 ============================\n");
+		System.out.println("\n\n\n\n============================ 최신 게시글 ============================\n");
 		
 		List<Board> boardList = service.boardView();
 		
@@ -168,9 +172,11 @@ public class BoardView {
 		int count = 1;
 		
 		for(Board board : copyList) {
-			System.out.printf(count++ + ". %-20s 조회수 : %d / 추천 : %d / 비추천 : %d\n",board.getTitle(), board.getVisite(), board.getUp(), board.getDown());
+			System.out.printf("\n" + count++ + ". %-20s - [ %s ]         조회수 : %d / 추천 : %d / 비추천 : %d\n",board.getTitle(), board.getWirter(), board.getVisite(), board.getUp(), board.getDown());
 		}
 		
+		
+		System.out.println("\n\n=====================================================================");
 	}
 	
 	
@@ -180,7 +186,7 @@ public class BoardView {
 	 */
 	public void boardDetail() throws Exception {
 		
-		System.out.println("\n============================ 게시글 내용 보기 ============================\n");
+		System.out.println("\n\n\n\n============================ 게시글 내용 보기 ============================\n");
 		
 		System.out.print("조회하실 게시글 제목을 입력해주세요 : ");
 		String title = br.readLine();
@@ -196,7 +202,7 @@ public class BoardView {
 		}
 		
 		else {
-			System.out.println("======== 입력하신 제목이 존재하지 않습니다.========");
+			System.out.println("\n=================== 입력하신 제목이 존재하지 않습니다 ====================");
 		}
 	}
 	
@@ -207,7 +213,7 @@ public class BoardView {
 	 */
 	public void boardUp() throws Exception {
 		
-		System.out.println("\n+++++++++++++++ 게시글 추천하기 +++++++++++++++\n");
+		System.out.println("\n\n\n\nup up up up up up up up 게시글 추천하기 up up up up up up up up\n");
 		
 		System.out.print("추천하실 게시글 제목을 입력해주세요 : ");
 		String title = br.readLine();
@@ -215,11 +221,11 @@ public class BoardView {
 		boolean result =  service.boardUp(title);
 		
 		if(!result) {
-			System.out.println("\n======== 입력하신 제목이 존재하지 않습니다.========\n");
+			System.out.println("\n=================== 입력하신 제목이 존재하지 않습니다 ====================");
 			return;
 		}
 		
-		System.out.println("\n============== [추천 완료] ==============\n");
+		System.out.println("\n========================= [추천 완료] =========================\n");
 		
 	}
 	
@@ -230,7 +236,7 @@ public class BoardView {
 	 */
 	public void boardDown() throws Exception {
 		
-		System.out.println("\n+++++++++++++++ 게시글 비추천하기 +++++++++++++++\n");
+		System.out.println("\n\n\n\ndown down down down down 게시글 비추천하기 down down down down down\n");
 		
 		System.out.println("비추천하실 게시글 제목을 입력해주세요 : ");
 		
@@ -239,11 +245,11 @@ public class BoardView {
 		boolean result = service.boardDown(title);
 		
 		if(!result) {
-			System.out.println("\n======== 입력하신 제목이 존재하지 않습니다.========\n");
+			System.out.println("\n=================== 입력하신 제목이 존재하지 않습니다 ====================");
 			return;
 		}
 		
-		System.out.println("\n============== [비추천 완료] ==============\n");
+		System.out.println("\n========================== [비추천 완료] =========================\n");
 	}
 	
 	
@@ -253,7 +259,7 @@ public class BoardView {
 	 */
 	public void boardUpdate()throws Exception {
 		
-		System.out.println("\n+++++++++++++++ 게시글 수정하기 +++++++++++++++\n");
+		System.out.println("\n\n\n\n+ + + + + + + + + + + + + + + 게시글 수정하기 + + + + + + + + + + + + + +\n");
 		
 		System.out.print("수정하고싶은 게시글 제목을 입력해주세요 : ");
 		String title = br.readLine();
@@ -261,7 +267,7 @@ public class BoardView {
 		Board titleCheck = service.titleCheck(title);
 		
 		if(titleCheck == null) {
-			System.out.println("\n======== 입력하신 제목이 존재하지 않습니다.========\n");
+			System.out.println("\n=================== 입력하신 제목이 존재하지 않습니다 ====================");
 			return;
 		}
 		
@@ -283,7 +289,7 @@ public class BoardView {
 		
 		service.boardUpdate(title, updateTitle, sb.toString());
 		
-		System.out.println("\n============== [수정 완료] ==============\n");
+		System.out.println("\n============================= [수정 완료] =============================\n");
 		
 		
 		
@@ -297,19 +303,19 @@ public class BoardView {
 	 */
 	public void boardDelet() throws Exception {
 		
-		System.out.println("\n+++++++++++++++ 게시글 삭제하기 +++++++++++++++\n");
+		System.out.println("\n\n\n\n+ + + + + + + + + + + + + + + 게시글 삭제하기 + + + + + + + + + + + + + +\n");
 		
-		System.out.print("삭제하실 게시글 제목을 입력해주세요");
+		System.out.print("삭제하실 게시글 제목을 입력해주세요 : ");
 		String title = br.readLine();
 		
 		boolean delete = service.boardDelete(title);
 		
 		if(delete) { // 제목이 없을때
-			System.out.println("\n======== 입력하신 제목이 존재하지 않습니다.========\n");
+			System.out.println("\n=================== 입력하신 제목이 존재하지 않습니다 ====================");
 			return;
 		}
 		
-		System.out.println("\n============== [삭제 완료] ==============\n");
+		System.out.println("\n============================= [삭제 완료] =============================\n");
 		
 		
 	}
