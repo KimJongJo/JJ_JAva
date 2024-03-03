@@ -22,4 +22,13 @@ INDEX VERSION 1.134+C:\home_study\JJ_JAva\.metadata\.plugins\org.eclipse.jdt.cor
 50806855.index
 1224087768.index
 2803941633.index
+<<<<<<< HEAD
+3174072868.index
+2291154762.index
+3917194683.index
+756085720.index
+1240304374.index
+430390964.index
+=======
+>>>>>>> 2bf6fa1dd71b636ff1475a7fc12592bba1565db4
 3934109305.index

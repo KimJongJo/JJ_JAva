@@ -5,6 +5,9 @@ import java.util.Collections;
 import java.util.List;
 
 import edu.kh.lambda.test.LambdaTest;
+import edu.kh.lambda.test.MyNumber;
+import edu.kh.lambda.test.StringConcat;
+import edu.kh.lambda.test.StringConcatImpl;
 
 public class TestRun {
 	public static void main(String[] args) {
@@ -47,8 +50,18 @@ public class TestRun {
 		
 		
 		
+		MyNumber max = (x, y) -> (x >= y ? x : y);
+		System.out.println(max.getMax(10, 20));
 		
 		
+		String s1 = "Hello";
+		String s2 = "World!";
+		
+		StringConcatImpl concat1 = new StringConcatImpl();
+		concat1.makeString(s1, s2);
+		
+		StringConcat concat2 = (s, v) -> System.out.println(s + "," + v);
+		concat2.makeString(s1, s2);
 		
 		
 		

@@ -7796,7 +7796,11 @@ user global configuration and to define the default location to store repositori
 not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
 EGit might behave differently since they see different configuration options.
 This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+<<<<<<< HEAD
+!SESSION 2024-02-28 11:05:25.942 -----------------------------------------------
+=======
 !SESSION 2024-02-27 21:34:18.116 -----------------------------------------------
+>>>>>>> 2bf6fa1dd71b636ff1475a7fc12592bba1565db4
 eclipse.buildId=4.30.0.20231201-1200
 java.version=17.0.9
 java.vendor=Eclipse Adoptium
@@ -7804,6 +7808,20 @@ BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=ko_KR
 Framework arguments:  -product org.eclipse.epp.package.jee.product
 Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.jee.product
 
+<<<<<<< HEAD
+!ENTRY org.eclipse.emf.ecore 2 0 2024-02-28 11:05:53.996
+!MESSAGE Both 'org.eclipse.jst.j2ee.core' and 'org.eclipse.jst.j2ee.core' register a package for 'application.xmi'
+
+!ENTRY ch.qos.logback.classic 1 0 2024-02-28 11:05:54.179
+!MESSAGE Activated before the state location was initialized. Retry after the state location is initialized.
+
+!ENTRY ch.qos.logback.classic 1 0 2024-02-28 11:06:05.572
+!MESSAGE Logback config file: C:\workspace\02_Java\.metadata\.plugins\org.eclipse.m2e.logback\logback.2.2.1.20231030-1438.xml
+
+!ENTRY org.eclipse.jface 2 0 2024-02-28 11:06:07.237
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2024-02-28 11:06:07.237
+=======
 !ENTRY org.eclipse.emf.ecore 2 0 2024-02-27 21:34:55.300
 !MESSAGE Both 'org.eclipse.jst.j2ee.core' and 'org.eclipse.jst.j2ee.core' register a package for 'application.xmi'
 
@@ -7816,6 +7834,7 @@ Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.e
 !ENTRY org.eclipse.jface 2 0 2024-02-27 21:35:01.337
 !MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
 !SUBENTRY 1 org.eclipse.jface 2 0 2024-02-27 21:35:01.337
+>>>>>>> 2bf6fa1dd71b636ff1475a7fc12592bba1565db4
 !MESSAGE A conflict occurred for CTRL+SHIFT+T:
 Binding(CTRL+SHIFT+T,
 	ParameterizedCommand(Command(org.eclipse.jdt.ui.navigate.open.type,Open Type,
@@ -7834,6 +7853,14 @@ Binding(CTRL+SHIFT+T,
 	org.eclipse.ui.defaultAcceleratorConfiguration,
 	org.eclipse.ui.contexts.window,,,system)
 
+<<<<<<< HEAD
+!ENTRY org.eclipse.egit.ui 2 0 2024-02-28 11:06:10.189
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\user1'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+=======
 !ENTRY org.eclipse.ui 4 4 2024-02-27 21:35:03.804
 !MESSAGE Unable to create part
 !STACK 1
@@ -8316,6 +8343,7 @@ org.eclipse.core.runtime.CoreException: Cannot determine URI for '/15_lambda/src
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1459)
 !SUBENTRY 2 org.eclipse.core.filebuffers 4 0 2024-02-27 21:35:17.332
 !MESSAGE Cannot determine URI for '/15_lambda/src/edu/kh/lambda/test/Calculator.java'.
+<<<<<<< HEAD
 !SESSION 2024-03-03 18:01:15.800 -----------------------------------------------
 eclipse.buildId=4.30.0.20231201-1200
 java.version=17.0.9
@@ -8360,3 +8388,6 @@ user global configuration and to define the default location to store repositori
 not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
 EGit might behave differently since they see different configuration options.
 This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+=======
+>>>>>>> 2bf6fa1dd71b636ff1475a7fc12592bba1565db4
+>>>>>>> 5690a51b5041117e95e9c83b464152317a5181ba
