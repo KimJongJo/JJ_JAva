@@ -35,6 +35,46 @@ public class ByteService {
 	// -> IOException 예외 처리 구문을 작성하는 것이 필수다.
 	
 	
+//	public void filebyteOutput() {
+//		FileOutputStream fos = null;
+//		
+//		try {
+//			fos = new FileOutputStream("/io_test2/20240303/바이트기반_테스트.txt");
+//			
+//			StringBuilder sb = new StringBuilder();
+//			
+//			sb.append("첫번째 줄\n");
+//			sb.append("두번째 줄\n");
+//			sb.append("세번째 줄\n");
+//			sb.append("네번째 줄\n");
+//			
+//			String sb2 = sb.toString();
+//			
+//			long start = System.nanoTime();
+//			
+//			fos.write(sb2.getBytes());
+//			
+//			long end = System.nanoTime();
+//			
+//			System.out.println("수행시간 : " + (end - start) + "ns");
+//			
+//			fos.flush();
+//			
+//			System.out.println("출력완료");
+//			
+//		}catch(IOException e) {
+//			e.printStackTrace();
+//		}finally {
+//			try {
+//				if(fos != null) {
+//					fos.close();
+//				}				
+//			}catch(Exception e) {
+//				e.printStackTrace();
+//			}
+//		}
+//	}
+	
 	/**
 	 * 바이트 기반 파일 출력
 	 */
@@ -277,6 +317,33 @@ public class ByteService {
 		
 	}
 	
+	
+//	public void filebyteInput() {
+//		
+//		FileInputStream fis = null;
+//		
+//		try {
+//			fis = new FileInputStream("/io_test2/20240303/바이트기반_테스트.txt");
+//			
+//			byte[] bytes = fis.readAllBytes();
+//			
+//			String content = new String(bytes);
+//			
+//			System.out.println(content);
+//			
+//		}catch(IOException e) {
+//			e.printStackTrace();
+//		}finally {
+//			try {
+//				if(fis != null) {
+//					fis.close();
+//				}
+//			}catch(IOException e) {
+//				e.printStackTrace();
+//			}
+//		}
+//		
+//	}
 	
 	/**
 	 * 바이트 기반 파일 입력2

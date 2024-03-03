@@ -7,7 +7,10 @@ public class ObjectRun {
 		
 		ObjectService os = new ObjectService();
 //		os.objectOutput();
-		os.objectInput();
+//		os.objectInput();
+		
+//		os.objectoutput();
+//		os.objectinput();
 		
 	}
 }

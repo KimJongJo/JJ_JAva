@@ -21,7 +21,57 @@ public class ObjectService {
 	 * 
 	 * */
 	
-	
+//	public void objectoutput() {
+//		FileOutputStream fos = null;
+//		ObjectOutputStream oos = null;
+//		
+//		try {
+//			fos = new FileOutputStream("/io_test2/20240303/Member.dat");
+//			oos = new ObjectOutputStream(fos);
+//			
+//			Member member = new Member("member01","pass01","김종조", 25);
+//			
+//			oos.writeObject(member);
+//			
+//			System.out.println("출력 완료");
+//		}catch(Exception e) {
+//			e.printStackTrace();
+//		}finally {
+//			try {
+//				if(oos!=null) {
+//					oos.close();
+//				}
+//			}catch(Exception e) {
+//				e.printStackTrace();
+//			}
+//		}
+//	}
+//	
+//	public void objectinput() {
+//		FileInputStream fis = null;
+//		ObjectInputStream ois = null;
+//		
+//		try {
+//			
+//			fis = new FileInputStream("/io_test2/20240303/Member.dat");
+//			ois = new ObjectInputStream(fis);
+//			
+//			Member member = (Member)ois.readObject();
+//			
+//			System.out.println(member);
+//			
+//		}catch(Exception e) {
+//			e.printStackTrace();
+//		}finally {
+//			try {
+//				if(ois!=null) {
+//					ois.close();
+//				}
+//			}catch(Exception e) {
+//				e.printStackTrace();
+//			}
+//		}
+//	}
 	
 	/**
 	 * 객체를 외부 파일로 출력 

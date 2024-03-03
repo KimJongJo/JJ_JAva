@@ -6,6 +6,10 @@ public class ByteRun {
 	public static void main(String[] args) {
 		ByteService service = new ByteService();
 		
-		service.fileCopy();
+//		service.fileByteInput2();
+//		service.fileCopy();
+		
+//		service.filebyteOutput();
+//		service.filebyteInput();
 	}
 }

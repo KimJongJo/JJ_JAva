@@ -99,6 +99,8 @@ public class FileService {
 		}
 	}
 	
+
+	
 	
 	/**
 	 * File 객체를 이용해서
@@ -124,7 +126,8 @@ public class FileService {
 		
 		
 	}
-	
+
+
 	
 	
 	/**
@@ -181,6 +184,33 @@ public class FileService {
 							fileName, date, type, size);
 			
 			System.out.println(result);
+		}
+		
+	}
+	
+	public void method11() {
+		File file = new File("/io_test2/20240303");
+		
+		if(!file.exists()) {
+			file.mkdirs();
+			
+			System.out.println("폴더 생성 완료");
+		}
+	}
+	
+	public void method22() {
+		File file = new File("/io_test2/20240303/파일생성.txt");
+		
+		if(!file.exists()) {
+			
+			try {
+				file.createNewFile();
+				
+				System.out.println("폴더 생성 완료");
+				
+			}catch(IOException e) {
+				e.printStackTrace();
+			}
 		}
 		
 	}
