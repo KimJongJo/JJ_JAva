@@ -562,6 +562,134 @@ public class ByteService {
 		
 		
 	}
+	
+	public void ex3() {
+		
+		BufferedReader br = null;
+		
+		FileInputStream fis = null;
+		BufferedInputStream bis = null;
+		
+		FileOutputStream fos = null;
+		BufferedOutputStream bos = null;
+		
+		try {
+			br = new BufferedReader(new InputStreamReader(System.in));
+			StringBuilder sb = new StringBuilder();
+			
+			System.out.println("복사할 파일 위치");
+			String target = br.readLine();
+			File file = new File(target);
+			
+			if(!file.exists()) {
+				System.out.println("파일 존재 X");
+				return;
+			}
+			
+			sb.append(target);
+			
+			int index = target.lastIndexOf(".");
+			
+			sb.insert(index, "_copy");
+			
+			fis = new FileInputStream(target);
+			bis = new BufferedInputStream(fis);
+			
+			byte[] bytes = bis.readAllBytes();
+			
+			
+			String copy = sb.toString();
+			
+			fos = new FileOutputStream(copy);
+			bos = new BufferedOutputStream(fos);
+			
+			bos.write(bytes);
+			
+			System.out.println("끝");
+			
+		}catch(Exception e) {
+			e.printStackTrace();
+		}finally {
+			
+			try {
+				if(bis != null) bis.close();
+				if(bos != null) bos.close();
+				if(br != null) br.close();
+			}catch(Exception e) {
+				e.printStackTrace();
+			}
+			
+		}
+		
+	}
+	
+	
+	
+//	public void ex1() {
+//		FileOutputStream fos = null;
+//		BufferedOutputStream bos = null;
+//		
+//		
+//		try {
+//			fos = new FileOutputStream("/io_test/20240222/출력해보기.txt");
+//			bos = new BufferedOutputStream(fos);
+//			
+//			StringBuilder sb = new StringBuilder();
+//			
+//			sb.append("동해물과백두산이\n");
+//			sb.append("동해물과백두산이\n");
+//			sb.append("동해물과백두산이\n");
+//			sb.append("동해물과백두산이\n");
+//			sb.append("동해물과백두산이\n");
+//			sb.append("동해물과백두산이\n");
+//			sb.append("동해물과백두산이\n");
+//			
+//			String content = sb.toString();
+//			
+//			bos.write(content.getBytes());
+//			
+//			bos.flush();
+//			
+//			
+//			
+//		}catch(IOException e) {
+//			e.printStackTrace();
+//		}finally {
+//			try {
+//				if(fos!=null) {
+//					fos.close();
+//				}
+//			}catch(IOException e) {
+//				e.printStackTrace();
+//			}
+//		}
+//	}
+	
+	public void ex2() {
+		FileInputStream fis = null;
+		BufferedInputStream bis = null;
+		
+		try {
+			fis = new FileInputStream("/io_test/20240222/노래가사.txt");
+			bis = new BufferedInputStream(fis);
+			
+			byte[] bytes = bis.readAllBytes();
+			
+			String content = new String(bytes);
+			
+			System.out.println(content);
+		}catch(IOException e) {
+			e.printStackTrace();
+		}finally {
+			try{
+				if(bis!=null) {
+					bis.close();
+				}
+			}catch(IOException e) {
+				e.printStackTrace();
+			}
+		}
+	}
 
 }
 

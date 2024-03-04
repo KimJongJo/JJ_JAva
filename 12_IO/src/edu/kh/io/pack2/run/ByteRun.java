@@ -11,5 +11,12 @@ public class ByteRun {
 		
 //		service.filebyteOutput();
 //		service.filebyteInput();
+		
+//		service.ex1();
+//		service.ex2();
+		service.ex3();
+		
+//		service.fileCopy();
+		
 	}
 }

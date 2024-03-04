@@ -13,7 +13,6 @@ import java.io.Serializable;
  * 
  * */
 
-
 public class Member implements Serializable{
 	
 	// serialVersionUID : 직렬화 식별 번호

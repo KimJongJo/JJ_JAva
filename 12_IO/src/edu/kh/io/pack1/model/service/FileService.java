@@ -72,7 +72,29 @@ public class FileService {
 	 *  
 	 * */
 	
+	public void method111() {
+		File file = new File("/io_test2/20240304");
+		
+		if(!file.exists()) {
+			file.mkdirs();
+			System.out.println("폴더 생성 완료");
+		}
+	}
 	
+	public void method222() {
+		File file = new File("/io_test2/20240304/파일생성.txt");
+		
+		try {
+			if(!file.exists()) {
+				
+				file.createNewFile();
+				
+				System.out.println("파일 생성 완료");
+			}
+		}catch(IOException e) {
+			e.printStackTrace();
+		}
+	}
 	
 	
 	/**
@@ -128,6 +150,32 @@ public class FileService {
 	}
 
 
+	public void method333() {
+		File directory = new File("/home_study/JJ_JAva/12_IO");
+		
+		File[] files = directory.listFiles();
+		
+		for(File f : files) {
+			
+			String fileName = f.getName();
+			
+			long fileModified = f.lastModified();
+			
+			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd a h:mm");
+			
+			String date = sdf.format(fileModified);
+			
+			String type = f.isFile() ? "파일" : "폴더";
+			
+			String size = f.length() + "B";
+			if(f.isDirectory()) size = "";
+			
+			String result = String.format("%-20s %-20s %-5s %10s", fileName, date, type, size); 
+			
+			System.out.println(result);
+			
+		}
+	}
 	
 	
 	/**

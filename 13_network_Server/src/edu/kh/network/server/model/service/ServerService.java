@@ -165,9 +165,85 @@ public class ServerService {
 //		 }
 		
 		// 포트 번호
+//		int port = 8500;
+//		
+//		// 소켓용, 입/출력용, 보조스트림 참조변수 생성
+//		ServerSocket serverSocket = null;
+//		Socket clientSocket = null;
+//		
+//		InputStream is = null;
+//		OutputStream os = null;
+//		
+//		BufferedReader br = null;
+//		PrintWriter pw = null;
+//		
+//		
+//		try {
+//			// 서버용 소켓 객체
+//			serverSocket = new ServerSocket(port);
+//			
+//			System.out.println("이곳은 Server입니다");
+//			System.out.println("클라이언트 요청 대기중...");
+//			
+//			
+//			// 클라이언트 쪽에서 접속 요청을 기다림, 접속 요청이 오면 수락 후 해당 클라이언트에 소켓 객체 생성
+//			clientSocket = serverSocket.accept();
+//			
+//			System.out.println("클라이언트 접속 성공!");
+//			
+//			
+//			// 연결된 클라이언트와 입출력 스트림 생성
+//			is = clientSocket.getInputStream();
+//			os = clientSocket.getOutputStream();
+//			
+//			
+//			// 보조 스트림을 이용해 성능 개선
+//			br = new BufferedReader(new InputStreamReader(is));
+//			pw = new PrintWriter(os);
+//			
+//			
+//			// 스트림을 통해 읽고 쓰기
+//			String str = "서버 접속 성공!!";
+//			
+//			pw.println(str);
+//			pw.flush();
+//			
+//			
+//			String clientMessage = br.readLine();
+//			System.out.println("클라이언트에서 보낸 메시지 : " + clientMessage);
+//			
+//
+//			Scanner sc = new Scanner(System.in);
+//			
+//			System.out.print("클라이언트로 전달할 메세지 : ");
+//			String str2 = sc.nextLine();
+//			
+//			pw.println(str2);
+//			pw.flush();
+//			
+//		}catch(Exception e) {
+//			e.printStackTrace();
+//		}finally {
+//			// 통신 종료
+//			
+//			 try {
+//
+//				 if(br != null) br.close();
+//				 if(pw != null) pw.close();
+//
+//				 
+//				 if(serverSocket != null) serverSocket.close();
+//				 if(clientSocket != null) clientSocket.close();
+//				 
+//			 }catch(Exception e) {
+//				 e.printStackTrace();
+//			 }
+//			 
+//		}
+		
+		
 		int port = 8500;
 		
-		// 소켓용, 입/출력용, 보조스트림 참조변수 생성
 		ServerSocket serverSocket = null;
 		Socket clientSocket = null;
 		
@@ -179,66 +255,49 @@ public class ServerService {
 		
 		
 		try {
-			// 서버용 소켓 객체
 			serverSocket = new ServerSocket(port);
 			
-			System.out.println("이곳은 Server입니다");
 			System.out.println("클라이언트 요청 대기중...");
-			
-			
-			// 클라이언트 쪽에서 접속 요청을 기다림, 접속 요청이 오면 수락 후 해당 클라이언트에 소켓 객체 생성
 			clientSocket = serverSocket.accept();
 			
-			System.out.println("클라이언트 접속 성공!");
+			System.out.println("연결 성공");
+			System.out.println("[server]");
 			
-			
-			// 연결된 클라이언트와 입출력 스트림 생성
 			is = clientSocket.getInputStream();
 			os = clientSocket.getOutputStream();
 			
-			
-			// 보조 스트림을 이용해 성능 개선
 			br = new BufferedReader(new InputStreamReader(is));
 			pw = new PrintWriter(os);
 			
+			String push1 = "서버 접속 성공!";
 			
-			// 스트림을 통해 읽고 쓰기
-			String str = "서버 접속 성공!!";
-			
-			pw.println(str);
+			pw.println(push1);
 			pw.flush();
 			
+			String cat = br.readLine();
+			System.out.println("클라이언트에서 보낸 메시지 : " + cat);
 			
-			String clientMessage = br.readLine();
-			System.out.println("클라이언트에서 보낸 메시지 : " + clientMessage);
-			
-
 			Scanner sc = new Scanner(System.in);
 			
-			System.out.print("클라이언트로 전달할 메세지 : ");
-			String str2 = sc.nextLine();
+			System.out.print("보낼 메시지 : ");
+			String push2 = sc.nextLine();
 			
-			pw.println(str2);
+			pw.println(push2);
 			pw.flush();
 			
+
 		}catch(Exception e) {
 			e.printStackTrace();
 		}finally {
-			// 통신 종료
-			
-			 try {
-
-				 if(br != null) br.close();
-				 if(pw != null) pw.close();
-
-				 
-				 if(serverSocket != null) serverSocket.close();
-				 if(clientSocket != null) clientSocket.close();
-				 
-			 }catch(Exception e) {
-				 e.printStackTrace();
-			 }
-			 
+			try {
+				if(br != null) br.close();
+				if(pw != null) pw.close();
+				
+				if(serverSocket != null) serverSocket.close();
+				if(clientSocket != null) clientSocket.close();
+			}catch(Exception e) {
+				e.printStackTrace();
+			}
 		}
 		
 		
