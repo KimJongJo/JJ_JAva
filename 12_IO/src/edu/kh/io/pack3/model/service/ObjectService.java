@@ -8,7 +8,7 @@ import java.io.ObjectOutputStream;
 
 import edu.kh.io.pack3.model.dto.Member;
 
-public class ObjectService {
+public class ObjectService{
 	
 	/* ObjectInputStream / ObjectOutputStream
 	 * 

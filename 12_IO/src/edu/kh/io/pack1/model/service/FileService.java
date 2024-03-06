@@ -46,7 +46,7 @@ public class FileService {
 	 * - 경로 표기 방법(하위 폴더, 파일 표시)
 	 * 
 	 * 백슬래시 (\, Windows) 	-> C:\workspace\02_Java
-	 * 슬래tl   (/, Linux, Mak) -> c:/workspace/02_Java
+	 * 슬래시   (/, Linux, Mac) -> c:/workspace/02_Java
 	 * 
 	 * 
 	 * - Java 언어의 특징 : 플랫폼(OS)에 독립적
